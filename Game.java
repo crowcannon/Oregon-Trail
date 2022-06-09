@@ -1,7 +1,7 @@
 /*
-Game class - chance survival game
+Game class - survival game
 
-In this game, the player character attempts to survive the Oregon trail. The player wants to be alive by the end of a set amount of days. Certain events may cause the journey to be longer than intended, and certain events may increase the player's chance of dying.
+In this game, the player character attempts to survive the Oregon trail. The player wants at least one member of their party to be alive by the end of a set amount of days. Certain events may cause the journey to be longer than intended, and certain events may cause party members to die depending on the player's decision. If all party members die, the player loses the game.
 
 Authors - Nora Fotoohi, Laura Zhang
 
@@ -24,18 +24,21 @@ State info
 //  Arraylist stores party members
 private static ArrayList<String> party
 
-//  Hashmap stores party members' statuses such as sicknesses and whether they are dead or alive
-private Hashmap<String, String> statuses;
+//  Hashmap stores sickness and wagon afflictions and gives a y/n choice if they want to fix it.
+private Hashmap<String, String> dailyProblems;
+private Hashmap<String, String> wagonProblems;
 
 //  Static int stores the current day, which progresses one at a time
-private int currentDay;
+private int day;
 
-//  Static int stores the remaining days which are subtracted
-private int daysLeft;
+//  Static int stores the number of people who die
+private int losses;
 
 Method info
 
-//  Next day method, subtracts day from daysLeft. If daysLeft is 0 and player status is living/sick, game ends (win). If player status is dead regardless of daysLeft, game ends (lose).
+//  Input names allows for party creation and sets the number of members that will be travelling.
+
+//  startGame, loops until the number of iterations matches the number of days the player inputted at the beginning. If i matches day and at least one player is alive, game ends (win). If player status is dead regardless of daysLeft, game ends (lose). Certain choices will add to the number of days the player will have to travel
 
 */
 
