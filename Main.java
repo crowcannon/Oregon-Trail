@@ -13,7 +13,8 @@ class Main {
     String command = Utils.inputStr("\nPlay again?\ny-yes\nn-no\n");
     switch (command) {
       case "y":  // yes
-        g.play();
+        Game nouveau = new Game();
+        nouveau.play();
         break;
         
       case "n":  // no
